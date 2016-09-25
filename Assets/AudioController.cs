@@ -34,6 +34,8 @@ public static class Globals
 
 {
     public static string filename; // Modifiable in Code
+    public static bool isRecording = false;
+    
 }
 
 [RequireComponent (typeof (AudioSource))]  
@@ -79,8 +81,18 @@ public class AudioRecorder : MonoBehaviour
         }  
     }  
 
+    void Update()
+    {
+        if(!Globals.isRecording && RecordingNode.recordingButtonPressed)
+        {
+            Globals.isRecording = true;
+            OnGUI();
+        }
+    }
+
     void OnGUI()   
     {  
+
         //If there is a microphone  
         if(micConnected)  
         {  
