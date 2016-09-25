@@ -4,14 +4,16 @@ using System.Collections;
 public class DatabaseController : MonoBehaviour
 {
     private string secretKey = "6072358"; // Edit this value and make sure it's the same as the one stored on the server
-    public string addScoreURL = "http://localhost/unity/addscore.php?"; //be sure to add a ? to your url
-    public string highscoreURL = "http://localhost/unity/display.php";
+    public string addScoreURL = "http://moodia.me/vr/addscore.php?"; //be sure to add a ? to your url
+    public string highscoreURL = "http://moodia.me/vr/display.php?";
 
     void Start()
     {
+        addScoreURL = "http://moodia.me/vr/addscore.php?";
+        highscoreURL = "http://moodia.me/vr/display.php?";
         StartCoroutine(GetScores());
-        StartCoroutine(PostScores("Bob", 10));
-        StartCoroutine(PostScores("Painis", 32));
+        StartCoroutine(PostScores("Test", 13));
+        StartCoroutine(PostScores("Michael", 27));
     }
 
     // remember to use StartCoroutine when calling this function!
