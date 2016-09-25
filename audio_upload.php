@@ -24,7 +24,7 @@ if ($_POST)
                 if ($_FILES['file']['name'] !== "")
                 {
                     //this checks the file mime type, to filter the kind of files you want to accept, this script is configured to accept only xml files, you can edit this one and the unity side to allow your desired file      
-                    if ($_FILES['file']['type'] === 'text/xml')
+                    if ($_FILES['file']['type'] === 'audio/wav')
                     {
                                
                         //construct the final file name path, it depends on how your web hosting has things configured, if its x10 free hosting, just change username to your x10 hosting username
